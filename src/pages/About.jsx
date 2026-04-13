@@ -114,14 +114,14 @@ export default function About() {
                 name: 'Man mohan',
                 degree: 'BA., LL.B',
                 title: 'Founder and Senior Advocate',
-                bio: '30+ years of experience in civil, criminal, consumer and banking laws with extensive courtroom practice.',
+                bio: 'A seasoned legal professional with over 30 years of extensive courtroom experience, specializing in civil, criminal, consumer, and banking laws. Known for his sharp legal acumen, strategic approach, and consistent track record in complex litigation, he has successfully represented clients across various courts with integrity and professionalism.',
                 image: '/manmohan.jpg'
               },
               {
                 name: 'Pronoy Srivastava',
                 degree: 'B.com LL.B (h), LLM (Corporate Law)',
                 title: 'Advocate and Legal Practitioner',
-                bio: 'Specializing in litigation, banking, corporate, and consumer matters with strong practical and strategic approach.',
+                bio: 'A dynamic legal practitioner with expertise in litigation, banking, corporate, and consumer laws. Combining practical courtroom experience with a strong understanding of financial and commercial matters, he delivers strategic, result-oriented solutions tailored to client needs.',
                 image: '/pronoy.jpg'
               },
               {
