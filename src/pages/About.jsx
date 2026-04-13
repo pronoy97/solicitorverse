@@ -60,27 +60,21 @@ export default function About() {
                 name: 'Man Mohan',
                 degree: 'BA., LL.B',
                 title: 'Founder and Senior Advocate',
-                bio: `A seasoned legal professional with over 30 years of extensive courtroom experience, specializing in civil, criminal, consumer, and banking laws.
-
-Known for his sharp legal acumen and strategic approach, he has built a strong track record in complex litigation and has successfully represented clients across various courts with integrity and professionalism.`,
+                bio: `A seasoned legal professional with over 30 years of extensive courtroom experience, specializing in civil, criminal, consumer, and banking laws. Known for his sharp legal acumen and strategic approach, he has built a strong track record in complex litigation and has successfully represented clients across various courts with integrity and professionalism.`,
                 image: '/manmohan.jpg'
               },
               {
                 name: 'Pronoy Srivastava',
                 degree: 'B.com LL.B (h), LLM (Corporate Law)',
                 title: 'Advocate and Legal Practitioner',
-                bio: `A dynamic legal practitioner with expertise in litigation, banking, corporate, and consumer laws.
-
-Combining practical courtroom experience with commercial understanding, he delivers strategic, result-oriented solutions tailored to client needs.`,
+                bio: `A dynamic legal practitioner with expertise in litigation, banking, corporate, and consumer laws. Combining practical courtroom experience with commercial understanding, he delivers strategic, result-oriented solutions tailored to client needs.`,
                 image: '/pronoy.jpg'
               },
               {
                 name: 'Karan Sanger',
                 degree: 'B.com LL.B (h)',
                 title: 'Associate Advocate',
-                bio: `Experienced in criminal litigation, bail matters, and trial work.
-
-Known for strong drafting skills and effective courtroom representation at District Courts of SBS Nagar, Jalandhar, Hoshiarpur, and Ludhiana.`,
+                bio: `Experienced in criminal litigation, bail matters, and trial work. Known for strong drafting skills and effective courtroom representation at District Courts of SBS Nagar, Jalandhar, Hoshiarpur, and Ludhiana.`,
                 image: '/karan.jpeg'
               }
             ].map((m, i) => (
@@ -100,7 +94,7 @@ Known for strong drafting skills and effective courtroom representation at Distr
                   <p className="text-yellow-600 font-semibold text-sm mb-3">{m.title}</p>
 
                   {/* ✅ SYMMETRY FIX */}
-                  <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700 min-h-[140px]">
+                  <p className="text-sm leading-relaxed text-gray-700 text-justify">
                     {m.bio}
                   </p>
                 </div>
