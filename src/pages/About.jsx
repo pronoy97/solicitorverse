@@ -17,10 +17,9 @@ export default function About() {
         subtitle="Practical legal solutions backed by real experience in litigation, banking, and corporate matters."
       />
 
-      {/* ✅ ABOUT SECTION WITH FULL BACKGROUND LOGO */}
+      {/* ABOUT SECTION */}
       <section className="py-20 bg-white relative overflow-hidden">
 
-        {/* 🔥 FULL BACKGROUND LOGO */}
         <img
           src="/logoo.png"
           alt="bg-logo"
@@ -47,7 +46,8 @@ export default function About() {
                 With professional exposure across courts, financial institutions, and legal advisory roles, the firm brings both legal and commercial understanding to every case, ensuring dedicated representation and strategic guidance.
               </p>
             </motion.div>
-                      </div>
+
+          </div>
         </div>
       </section>
 
@@ -103,7 +103,9 @@ export default function About() {
             className="text-center mb-16"
           >
             <h2 className="font-serif text-4xl font-bold text-primary-900 mb-4">Our Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Meet the experienced professionals dedicated to your success.</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Meet the experienced professionals dedicated to your success.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -122,6 +124,13 @@ export default function About() {
                 bio: 'Specializing in litigation, banking, corporate, and consumer matters with strong practical and strategic approach.',
                 image: '/pronoy.jpg'
               },
+              {
+                name: 'Karan Sanger',
+                degree: 'B.com LL.B (h)',
+                title: 'Associate Advocate',
+                bio: 'Experienced in criminal litigation, bail matters, and trial work. Known for strong drafting skills and effective courtroom representation at District Courts of SBS Nagar, Jalandhar, Hoshiarpur, and Ludhiana.',
+                image: '/karan.jpg'
+              }
             ].map((member, idx) => (
               <motion.div
                 key={idx}
