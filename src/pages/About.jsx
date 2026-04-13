@@ -17,7 +17,7 @@ export default function About() {
         subtitle="Practical legal solutions backed by real experience in litigation, banking, and corporate matters."
       />
 
-      {/* ABOUT SECTION */}
+      {/* ABOUT SECTION (RESTORED EXACTLY) */}
       <section className="py-20 bg-white relative overflow-hidden">
         <img
           src="/logoo.png"
@@ -26,50 +26,30 @@ export default function About() {
         />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="font-serif text-4xl font-bold text-primary-900 mb-6">
-              About the Practice
-            </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-serif text-4xl font-bold text-primary-900 mb-6">
+                About the Practice
+              </h2>
 
-            <p className="text-lg leading-relaxed text-gray-700 text-justify font-medium">
-              SolicitorVerse is a litigation-focused law firm led by Advocates Man Mohan and Pronoy Srivastava. Based primarily in Punjab, Haryana, Himachal Pradesh, and the UT of Chandigarh, the firm offers extensive experience in civil, criminal, consumer, insurance, and banking matters. With over 30 years of combined experience, the firm provides practical, results-driven legal solutions.
+              {/* ✅ YOUR ORIGINAL PARAGRAPH */}
+              <p className="text-lg leading-relaxed text-gray-700 max-w-xl text-justify font-medium">
+                SolicitorVerse is a litigation-focused law firm led by Advocates Man Mohan and Pronoy Srivastava. Based primarily in the states of Punjab, Haryana, and Himachal Pradesh, as well as the UT of Chandigarh, the firm offers extensive experience in civil, criminal, consumer, insurance, and banking matters. With over 30 years of combined experience, the firm has built a reputation for providing practical, results-driven legal solutions to individuals and businesses alike.
 
-              <br /><br />
+                Built on a foundation of integrity, experience, and practical legal insight, the practice focuses on delivering clear, result-oriented solutions tailored to each client’s needs.
 
-              Built on integrity and practical legal insight, the practice focuses on delivering clear, result-oriented solutions tailored to each client’s needs.
-
-              <br /><br />
-
-              With professional exposure across courts, financial institutions, and advisory roles, the firm ensures dedicated representation and strategic guidance.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Mission */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: Target, title: 'Our Mission', content: 'Deliver practical and result-oriented legal solutions.' },
-              { icon: Heart, title: 'Our Values', content: 'Integrity, excellence, and client-first approach.' },
-              { icon: Award, title: 'Our Promise', content: 'Dedicated representation with strategic thinking.' }
-            ].map((item, i) => (
-              <motion.div key={i} className="bg-white p-8 rounded-xl shadow-sm">
-                <item.icon className="w-8 h-8 text-primary-700 mb-4" />
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p>{item.content}</p>
-              </motion.div>
-            ))}
+                With professional exposure across courts, financial institutions, and legal advisory roles, the firm brings both legal and commercial understanding to every case, ensuring dedicated representation and strategic guidance.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* TEAM */}
+      {/* TEAM SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-center text-4xl font-bold mb-12">Our Team</h2>
@@ -91,7 +71,7 @@ Known for his sharp legal acumen and strategic approach, he has built a strong t
                 title: 'Advocate and Legal Practitioner',
                 bio: `A dynamic legal practitioner with expertise in litigation, banking, corporate, and consumer laws.
 
-Combining courtroom experience with commercial understanding, he delivers practical, strategic, and result-oriented solutions tailored to client needs.`,
+Combining practical courtroom experience with commercial understanding, he delivers strategic, result-oriented solutions tailored to client needs.`,
                 image: '/pronoy.jpg'
               },
               {
@@ -100,25 +80,27 @@ Combining courtroom experience with commercial understanding, he delivers practi
                 title: 'Associate Advocate',
                 bio: `Experienced in criminal litigation, bail matters, and trial work.
 
-Known for strong drafting skills and effective courtroom representation across district courts of SBS Nagar, Jalandhar, Hoshiarpur, and Ludhiana.`,
+Known for strong drafting skills and effective courtroom representation at District Courts of SBS Nagar, Jalandhar, Hoshiarpur, and Ludhiana.`,
                 image: '/karan.jpeg'
               }
             ].map((m, i) => (
-              <div key={i} className="bg-gray-50 rounded-xl shadow-sm overflow-hidden">
-                
-                {/* IMAGE FIXED (NO ZOOM ISSUE) */}
+              <div
+                key={i}
+                className="bg-gray-50 rounded-xl shadow-sm overflow-hidden flex flex-col"
+              >
+                {/* ✅ ORIGINAL IMAGE STYLE (NO DISTORTION) */}
                 <img
                   src={m.image}
                   className="w-full h-64 object-contain bg-gray-100"
                 />
 
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-full">
                   <h3 className="text-xl font-bold">{m.name}</h3>
                   <p className="text-sm text-gray-500">{m.degree}</p>
                   <p className="text-yellow-600 font-semibold text-sm mb-3">{m.title}</p>
 
-                  {/* PARAGRAPH STYLE BIO */}
-                  <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700">
+                  {/* ✅ SYMMETRY FIX */}
+                  <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700 min-h-[140px]">
                     {m.bio}
                   </p>
                 </div>
