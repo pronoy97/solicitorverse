@@ -135,7 +135,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full"
+                className="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all flex flex-col h-full min-h-[520px]"
               >
                 <img
                   src={member.image}
@@ -143,7 +143,7 @@ export default function About() {
                   className="w-full h-64 object-cover object-top rounded-t-xl"
                 />
 
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-6 flex flex-col justify-between h-full">
                   <h3 className="font-serif text-2xl font-bold text-primary-900 mb-1">
                     {member.name}
                   </h3>
@@ -156,7 +156,7 @@ export default function About() {
                     {member.title}
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed text-sm mt-auto">
+                  <p className="text-gray-700 leading-relaxed text-sm mt-4 flex-grow">
                     {member.bio}
                   </p>
                 </div>
