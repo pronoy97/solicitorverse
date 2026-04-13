@@ -129,7 +129,7 @@ export default function About() {
                 degree: 'B.com LL.B (h)',
                 title: 'Associate Advocate',
                 bio: 'Experienced in criminal litigation, bail matters, and trial work. Known for strong drafting skills and effective courtroom representation at District Courts of SBS Nagar, Jalandhar, Hoshiarpur, and Ludhiana.',
-                image: '/karan.jpg'
+                image: '/karan.jpeg'
               }
             ].map((member, idx) => (
               <motion.div
