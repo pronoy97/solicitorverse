@@ -1,10 +1,11 @@
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Shield, Clock, Users, CheckCircle } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import emailjs from '@emailjs/browser'
 
 const consultationSchema = z.object({
   name: z.string().min(2, 'Name is required'),
@@ -28,6 +29,12 @@ export default function Consultation() {
   const [submitStatus, setSubmitStatus] = useState(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  // Initialize EmailJS using environment variables (Vite: import.meta.env)
+  useEffect(() => {
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID || 'a11TA-pANR4IoYi3Y'
+    emailjs.init(userId)
+  }, [])
+
   const {
     register,
     handleSubmit,
@@ -40,13 +47,45 @@ export default function Consultation() {
   const onSubmit = async (data) => {
     setIsSubmitting(true)
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      console.log('Consultation request:', data)
+      // Send email notification (service/template read from env with fallbacks)
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_8zjpkts'
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_6778yr3'
+      const toEmail = import.meta.env.VITE_EMAILJS_TO_EMAIL || 'pronoysrivastava@gmail.com'
+
+      await emailjs.send(serviceId, templateId, {
+        to_email: toEmail,
+        from_name: data.name,
+        client_email: data.email,
+        client_phone: data.phone,
+        case_type: data.caseType,
+        client_message: data.message || 'No message provided',
+        subject: `New Consultation Request from ${data.name}`
+      })
+
+      // Format the message for WhatsApp
+      const message = `*New Consultation Request*\n\n` +
+        `*Name:* ${data.name}\n` +
+        `*Phone:* ${data.phone}\n` +
+        `*Email:* ${data.email}\n` +
+        `*Case Type:* ${data.caseType}\n` +
+        `*Message:* ${data.message || 'N/A'}\n\n` +
+        `_Submitted from: SolicitorVerse Website_`
+
+      // Encode the message for URL
+      const encodedMessage = encodeURIComponent(message)
+      
+      // WhatsApp API URL with your number (+917837541531 -> 917837541531)
+      const whatsappUrl = `https://wa.me/917837541531?text=${encodedMessage}`
+      
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank')
+      
+      console.log('Consultation request sent to WhatsApp and Email:', data)
       setSubmitStatus('success')
       reset()
       setTimeout(() => setSubmitStatus(null), 5000)
     } catch (error) {
+      console.error('Error sending consultation request:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -312,7 +351,7 @@ export default function Consultation() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="font-serif text-4xl font-bold text-primary-900 mb-4">Why Choose LegalElite?</h2>
+            <h2 className="font-serif text-4xl font-bold text-primary-900 mb-4">Why Choose SolicitorVerse?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">We combine expertise with genuine care for our clients' success.</p>
           </motion.div>
 
